@@ -48,8 +48,8 @@ This project simulates a **Federated Learning (FL)**-based **Intrusion Detection
     <td align="center"><strong>DDoS Detection by FL LSTM</strong></td>
   </tr>
   <tr>
-    <td><img src="netanim_output.png" alt="NetAnim Screenshot" width="400"/></td>
-    <td><img src="ddos_detected_plot.png" alt="Detection Output" width="400"/></td>
+    <td><img src="netanim_output.jpg" alt="NetAnim Screenshot" width="400"/></td>
+    <td><img src="ddos_detected_plot.jpg" alt="Detection Output" width="400"/></td>
   </tr>
 </table>
 
