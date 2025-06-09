@@ -33,12 +33,36 @@ This project simulates a **Federated Learning (FL)**-based **Intrusion Detection
   ```bash
   pip install -r requirements.txt
 ```
+## How It Works
 
-3. **🧠 How It Works**
-  DDoS Traffic Simulation: Simulated using UDP/TCP flood in NS-3.
-  Packet Capture & Feature Extraction: Logged for preprocessing.
-  Federated Learning:Each node trains a local LSTM model on its data. FedAvg is used to generate a global model.
-  Intrusion Detection: The global model detects DDoS attacks from unseen traffic.
+### 1. DDoS Traffic Simulation (NS-3)
+- Simulates an IoT network with devices, a server, and malicious nodes.
+- Attackers launch DDoS via UDP floods and TCP SYN floods, overwhelming the server.
+- Legitimate traffic gets delayed or dropped.
+
+### 2. Packet Capture & Feature Extraction
+- NS-3 captures network traffic using built-in tools.
+- Extracts features like packet counts, IP frequency, protocols, and timings.
+- Prepares structured datasets for model training.
+
+### 3. Federated Learning with LSTM
+- Each IoT node trains a local LSTM model on its own data (time-series traffic patterns).
+- Nodes share only model parameters, preserving data privacy.
+- FedAvg algorithm averages weights to create a global model shared across nodes.
+
+### 4. Real-Time Intrusion Detection
+- The global LSTM model analyzes incoming traffic sequences.
+- Detects abnormal patterns indicating DDoS attacks.
+- Flags attacks for mitigation.
+
+### Why This Approach?
+| Traditional IDS       | Federated Learning IDS      |
+|----------------------|-----------------------------|
+| Centralized data      | Data stays local (privacy)   |
+| Limited scalability   | Scalable across devices      |
+| Static retraining     | Adaptive, real-time learning |
+| High resource usage   | Lightweight for IoT devices  |
+
 
 ## 🖼️ Demo Snapshots
 
